@@ -34,4 +34,4 @@ root                    (project root folder)
 
 ## Authors
 ---
-* # TODO: Add your names and emails here
+* Okechukwu Prince, email: oke21006@byui.edu
