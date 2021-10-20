@@ -34,4 +34,9 @@ root                    (project root folder)
 
 ## Authors
 ---
+
 Gilles Mambou - gillesravelmambou@gmail.com
+
+Scott Thompson
+Email: scottathompson98@gmail.com
+
