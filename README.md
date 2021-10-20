@@ -46,8 +46,9 @@ root                    (project root folder)
 
 ---
 
-- # TODO: Add your names and emails here
-  Scott Thompson
-  Email: scottathompson98@gmail.com
-
 Matias Rodriguez: maturod96@gmail.com
+
+Gilles Mambou - gillesravelmambou@gmail.com
+
+Scott Thompson
+Email: scottathompson98@gmail.com
