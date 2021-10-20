@@ -34,4 +34,4 @@ root                    (project root folder)
 
 ## Authors
 ---
-* # TODO: Add your names and emails here
+* Grant Boreham | bor21004@byui.edu
