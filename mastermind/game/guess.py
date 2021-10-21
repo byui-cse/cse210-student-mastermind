@@ -1,4 +1,4 @@
 import random
 
-class Random:
+class Guess:
     pass
