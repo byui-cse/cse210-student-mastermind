@@ -68,10 +68,7 @@ class Director:
         # get next player's move
         player = self._roster.get_current()
         self._console.write(f"{player.get_name()}'s turn:")
-        pile = self._console.read_number("What pile to remove from? ")
-        stones = self._console.read_number("How many stones to remove? ")
-        move = Move(stones, pile)
-        player.set_move(move)
+        
 
     def _do_updates(self):
         """Updates the important game information for each round of play. In 
