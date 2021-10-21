@@ -12,7 +12,7 @@ class Board:
         """
         The constructor declares and initializes instance attributes with their default values. It also invokes the private _prepare method
         """
-        _items = {}
+        self._items = {}
 
     
 
@@ -56,9 +56,10 @@ class Board:
         Args:
             self(Board): an instance of Board
         """
-        text =  "\n--------------------"
-        text += ("\nTesting")
-        text += "\n--------------------"
+        text = "\n-------------------------\n"
+        for key, value in self._items.items():
+            text += f"Player {key}: {value[1]}, {value[2]}\n"
+        text += "-------------------------\n"
         return str(text)
 
     def apply(self,move):

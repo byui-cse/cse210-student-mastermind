@@ -56,6 +56,7 @@ class Director:
             name = self._console.read(f"Enter a name for player {n + 1}: ")
             player = Player(name)
             self._roster.add_player(player)
+            self._board.prepare(player)
 
     def _get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
