@@ -37,3 +37,4 @@ root                    (project root folder)
 * # TODO: Add your names and emails here
 
 Jeremy Diamond socjermeyd@gmail.com
+Pierre Phil Bangay pierrephild@gmail.com
