@@ -13,10 +13,10 @@ class Director:
         Controller
 
     Attributes:
-        board (Hunter): An instance of the class of objects known as Board.
+        board (): An instance of the class of objects known as Board.
         console (Console): An instance of the class of objects known as Console.
         keep_playing (boolean): Whether or not the game can continue.
-        move (Rabbit): An instance of the class of objects known as Move.
+        move (): An instance of the class of objects known as Move.
         roster (Roster): An instance of the class of objects known as Roster.
     """
 
@@ -45,7 +45,8 @@ class Director:
             self._do_outputs()
 
     def _prepare_game(self):
-        """Prepares the game before it begins. In this case, that means getting the player names and adding them to the roster.
+        """Prepares the game before it begins. In this case, that means getting the player names
+         and adding them to the roster.
         
         Args:
             self (Director): An instance of Director.
