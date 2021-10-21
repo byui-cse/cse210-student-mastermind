@@ -72,7 +72,7 @@ class Director:
         self._console.write(f"{player.get_name()}'s turn:")
         player_guess = self._console.read_number("What is your guess?")
         guess = Guess(player_guess)
-        player.get_guess(guess)
+        player.set_guess(guess)
 
     def _do_updates(self):
         """Updates the important game information for each round of play. In 
