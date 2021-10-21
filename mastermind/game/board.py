@@ -62,7 +62,7 @@ class Board:
         text += "-------------------------\n"
         return str(text)
 
-    def apply(self,move):
+    def apply(self, guess):
         """
         The apply method applies a move to the playing surface. In this case, that means ???????? The apply method accepts one argument, an instance of Move.
 
@@ -70,5 +70,5 @@ class Board:
             self(Board): an instance of Board.
             move (Move): an instance of Move.
         """
-        self.guess = move.get_guess()
+        self.guess = guess.get_guess()
 

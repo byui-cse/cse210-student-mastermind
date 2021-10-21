@@ -1,4 +1,4 @@
-class Move:
+class Guess:
     """A maneuver in the game. The responsibility of Move is to keep track of the players guesses.
     
     Stereotype: 
@@ -8,7 +8,7 @@ class Move:
         _guess (integer): The number guessed by current user.
         
     """
-    def __init__(self,guess):
+    def __init__(self, guess):
         """The class constructor.
         
         Args:
