@@ -1,5 +1,5 @@
-class Move:
-    """A maneuver in the game. The responsibility of Move is to keep track of the players guesses.
+class Guess:
+    """A maneuver in the game. The responsibility of Guess is to keep track of the players guesses.
     
     Stereotype: 
         Information Holder
@@ -8,7 +8,7 @@ class Move:
         _guess (integer): The number guessed by current user.
         
     """
-    def __init__(self,guess):
+    def __init__(self, guess):
         """The class constructor.
         
         Args:
@@ -21,8 +21,6 @@ class Move:
         """Returns the pile to remove from.
 
         Args:
-            self (Move): an instance of Move.
+            self (Guess): an instance of Guess.
         """
         return self._guess
-
-  
