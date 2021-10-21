@@ -64,8 +64,8 @@ class Director:
             self (Director): An instance of Director.
         """
         # display the game board
-        board = self._board.to_string()
-        self._console.write(board)
+       
+
         # get next player's move
         player = self._roster.get_current()
         self._console.write(f"{player.get_name()}'s turn:")
@@ -78,23 +78,24 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+        #I left the move in here from the last game, we don't have a class called Move,
+        #but we might need one.
         player = self._roster.get_current()
         move = player.get_move()
         self._board.apply(move)
  
     def _do_outputs(self):
         """Outputs the important game information for each round of play. In 
-        this case, that means checking if there are stones left and declaring the winner.
+        this case, that means checking if the guess is right and getting a hint if not. 
+
 
         Args:
             self (Director): An instance of Director.
         """
-        if self._board.is_empty():
-            winner = self._roster.get_current()
-            name = winner.get_name()
-            print(f"\n{name} won!")
-            self._keep_playing = False
-        self._roster.next_player()
+        
+        #we don't have a Hint class yet. do we need one?
+        #check if playersguess is == to random number generated at beginning. 
 
+        #give hint 
      
        
