@@ -92,9 +92,4 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        if self.mastermind.has_won(self.roster.get_current()):
-            winner = self.roster.get_current()
-            name = winner.get_name()
-            print(f"\n{name} won!")
-            self.keep_playing = False
-        self.roster.next_player()
+        
