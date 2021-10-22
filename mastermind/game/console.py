@@ -1,5 +1,3 @@
-
-
 import random
 
 class Console:
@@ -23,7 +21,7 @@ class Console:
         Returns:
             string: The user's input as text.
         """
-        return input(prompt)
+        return input(prompt).title()
 
     def read_number(self, prompt):
         """Gets numerical input from the user through the screen.
@@ -35,7 +33,7 @@ class Console:
         Returns:
             integer: The user's input as an integer.
         """
-        return int(input(prompt))
+        return input(prompt)
         
     def write(self, text):
         """Displays the given text on the screen. 
