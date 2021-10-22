@@ -3,18 +3,16 @@ import random
 from game import roster
 
 class Board:
-
     """
-     A board is defined as a designated playing surface. The responsibility of Board is to keep track of the pieces in play.
+     A board is defined as a designated playing surface. The
+     responsibility of Board is to keep track of the pieces in play.
     """
-
     def __init__(self) -> None:
         """
-        The constructor declares and initializes instance attributes with their default values. It also invokes the private _prepare method
+        The constructor declares and initializes instance attributes with
+        their default values. It also invokes the private _prepare method
         """
-        self._items = {}
-
-    
+        self._items = {}    
 
     def prepare(self, player):
         """Sets up the board with an entry for each player.
@@ -51,7 +49,8 @@ class Board:
 
     def to_string(self):
         """
-        The to_string method converts the board data to its string representation and returns it to the caller.
+        The to_string method converts the board data to its
+        string representation and returns it to the caller.
 
         Args:
             self(Board): an instance of Board
@@ -60,15 +59,34 @@ class Board:
         for key, value in self._items.items():
             text += f"Player {key}: {value[1]}, {value[2]}\n"
         text += "-------------------------\n"
-        return str(text)
-
-    def apply(self,move):
+        return str(text)    
+    
+    def current_guess(self, player, guess):
         """
-        The apply method applies a move to the playing surface. In this case, that means ???????? The apply method accepts one argument, an instance of Move.
+        The current_guess updates the board with the current guess.
 
         Args:
-            self(Board): an instance of Board.
-            move (Move): an instance of Move.
+            self (Board): an instance of Board.
+            guess (Guess): an instance of Guess.
         """
-        self.guess = move.get_guess()
+        items = self._items[player.get_name()]
+        items[1] = guess.get_guess()
+        items[2] = self._create_hint(items[0], guess.get_guess())
+        self._items[player.get_name()] = items
+    
+    def check_hint(self, player):
+        """
+        The check_hint checks if there are no "x" in the hint.
 
+        Args:
+            self (Mastermind): an instance of a mastermind
+            player (Player): the player whose hint is checked
+
+        Returns: true if there are no "x" in the hint
+        """
+        hint = self._items[player.get_name()][2]
+
+        for character in hint:
+            if character != "x":
+                return False
+        return True
