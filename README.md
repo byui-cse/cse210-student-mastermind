@@ -35,4 +35,5 @@ root                    (project root folder)
 ## Authors
 ---
 * Grant Boreham | bor21004@byui.edu
+* Rachel Vargas | var18013@byui.edu
 * Julio Rubio   | esc18010@byui.edu
