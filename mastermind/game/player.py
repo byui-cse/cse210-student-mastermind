@@ -8,7 +8,7 @@ class Player:
         _name (string): The player's name.
         _move (Move): The player's last move.
     """
-    def __init__(self, name):
+    def __init__(self, name, board):
         """The class constructor.
         
         Args:
@@ -16,6 +16,7 @@ class Player:
         """
         self._name = name
         self._guess = None
+        self._board = board
         
     def get_guess(self):
         """Returns the player's last guess (an instance of Guess). If the player 

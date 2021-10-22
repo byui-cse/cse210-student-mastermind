@@ -22,10 +22,12 @@ class Board:
             self (Board): an instance of Board.
             guess (Guess): an instance of Guess
         '''
-        attempt = guess.get_guess()
+        attempt = guess
 
-        for i in attempt:
+        for i in str(attempt):
             self._guesses.append(int(i))
+
+        self.compare_guess()
 
     def compare_guess(self):
         '''The class compares the guesses and changes the asterisks list.
@@ -50,16 +52,39 @@ class Board:
 
         self._guesses = []
 
-        
-        print(self._asterisks)
-        print(self._dashes)
+    def to_string(self, roster):
+        self_board = roster.players[0]._board
+        opponent_board = roster.players[1]._board
+        table = '\n----------------------------'
+
+        table += f'\nPlayer {roster.players[0].get_name()}: {" ".join(str(self_board._dashes))}, {" ".join(str(self_board._asterisks))}'
+        table += f'\nPlayer {roster.players[1].get_name()}: {" ".join(str(opponent_board._dashes))}, {" ".join(str(opponent_board._asterisks))}'
+        table += '\n----------------------------'
+
+        return table
+
 
     def _prepare(self):
         '''The protected method _prepare, adds 4 numbers between 1, 9 to guess.
 
         Args:
-        self (Board): an instance of Board
+            self (Board): an instance of Board
+        '''
+        number = str(random.randint(1000, 9999))
+
+        for i in number:
+            self._number.append(int(i))
+
+
+    def is_win(self):
+        '''The class return true or false if the current player
+        guesses everything.
+
+        Args:
+            self (Board): an instance of Board            
         '''
 
-        for _ in range(4):
-            self._number.append(random.randint(1, 9))
+        if self._guesses == self._number:
+            return True
+        else:
+            return False
