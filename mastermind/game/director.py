@@ -31,7 +31,8 @@ class Director:
         self._keep_playing = True
         self._move = None
         self._roster = Roster()
-        
+        self.number_players = 2 #there can only be two players at a time
+
     def start_game(self):
         """Starts the game loop to control the sequence of play.
         
@@ -51,10 +52,11 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        for n in range(2):
+        for n in range(self.number_players):
             name = self._console.read(f"Enter a name for player {n + 1}: ")
             player = Player(name)
-            self._roster.add_player(player)
+            self._roster.add_player(name)
+            self.board.prepare(name)
     
     def _get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
@@ -64,7 +66,8 @@ class Director:
             self (Director): An instance of Director.
         """
         # display the game board
-       
+        board = self.board.to_string() #I haven't named anything in board to_string yet
+        player=self.roster.get_current()
 
         # get next player's move
         player = self._roster.get_current()

@@ -2,7 +2,7 @@ import random
 
 class Board:
     pass
-
+    
 #this is from the snippets in the game instructions. 
 #this might give you some ideas how to fill out this class
     def prepare(self, player):
@@ -16,3 +16,6 @@ class Board:
         guess = "----"
         hint = "****"
         self._items[name] = [code, guess, hint]
+
+    def get_current(self):
+        pass   
