@@ -15,6 +15,11 @@ from game.roster import Roster
 from game.check import Check    
 
  """This imports  clear screen from game.clear_screen"""
+from game.board import Board
+from game.console import Console
+from game.player import Player
+from game.roster import Roster
+from game.check import Check
 from game.clear_screen import ClearScreen
 import os
 
