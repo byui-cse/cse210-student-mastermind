@@ -19,7 +19,8 @@ class Director:
         move (): An instance of the class of objects known as Move.
         roster (Roster): An instance of the class of objects known as Roster.
     """
-
+#we are supposed to be protecting many of these methods and I haven't chosen any i thought the team
+#should choose. 
     def __init__(self):
         """The class constructor.
         
@@ -66,12 +67,14 @@ class Director:
             self (Director): An instance of Director.
         """
         # display the game board
-        board = self.board.to_string() #I haven't named anything in board to_string yet
+        board = self.board #I haven't named anything in board  yet
         player=self.roster.get_current()
 
         # get next player's move
         player = self._roster.get_current()
         self._console.write(f"{player.get_name()}'s turn:")
+
+
         
 
     def _do_updates(self):
@@ -85,7 +88,7 @@ class Director:
         #but we might need one.
         player = self._roster.get_current()
         move = player.get_move()
-        self._board.apply(move)
+        self._board.apply(move) #this is apply the hint. maybe call it apply_hint
  
     def _do_outputs(self):
         """Outputs the important game information for each round of play. In 
@@ -96,9 +99,9 @@ class Director:
             self (Director): An instance of Director.
         """
         
-        #we don't have a Hint class yet. do we need one?
+        
         #check if playersguess is == to random number generated at beginning. 
 
-        #give hint 
+        #give hint hint comes from guess.py
      
        

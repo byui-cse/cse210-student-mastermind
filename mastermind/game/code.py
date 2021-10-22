@@ -4,4 +4,7 @@ import random
  #this is the number the players are trying to guess. 
  
 class Code:
-    pass
+
+    def code_number(self):
+        self.code = random.randint(1000,9999)
+        return self.code
