@@ -67,7 +67,8 @@ class Board:
 
         Args:
             self (Board): an instance of Board.
-            guess (Guess): an instance of Guess.
+            guess (Guess): The current guess of the player.
+            player (Player): The player whose guess is updated.
         """
         items = self._items[player.get_name()]
         items[1] = guess.get_guess()
