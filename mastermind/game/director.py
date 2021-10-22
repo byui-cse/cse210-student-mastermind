@@ -1,4 +1,3 @@
-
 from game.board import Board
 from game.console import Console
 from game.guess import Guess
@@ -70,7 +69,7 @@ class Director:
         # Get Players next guess
         player = self._roster.get_current()
         self._console.write(f"{player.get_name()}'s turn:")
-        player_guess = self._console.read_number("What is your guess?")
+        player_guess = self._console.read_number("What is your guess? ")
         guess = Guess(player_guess)
         player.set_guess(guess)
 
@@ -83,13 +82,19 @@ class Director:
         """
         player = self._roster.get_current()
         guess = player.get_guess()
-        self._board.apply(guess)
+        self._board.current_guess(player, guess)
 
     def _do_outputs(self):
-        """Outputs the important game information for each round of play. In 
-        this case, that means giving players a hint.
+        """
+        The _do_outputs will determine and display the winner.
 
         Args:
             self (Director): An instance of Director.
         """
-        
+        if self._board.check_hint(self._roster.get_current()):
+            current_player = self._roster.get_current()
+            name = current_player.get_name()
+            self._console.write(f"\n{name} won!")
+            self._keep_playing = False
+
+        self._roster.next_player()
