@@ -28,6 +28,7 @@ class Director:
         self._console = Console()
         self._keep_playing = True
         self._roster = Roster()
+        self.player_count = self._console.read_number("How many players do you have? ")
         self.hint_key = ("-------------------------------------------\n"
                          "x = correct number in the correct place\n"
                          "o = correct number but incorrect position\n"
@@ -63,7 +64,7 @@ class Director:
         self._console.write(game_intro)
         self._console.write(self.hint_key)
 
-        for n in range(2):
+        for n in range(int(self.player_count)):
             name = self._console.read(f"Enter a name for player {n + 1}: ")
             player = Player(name)
             self._roster.add_player(player)
@@ -109,7 +110,7 @@ class Director:
         if self._board.check_hint(self._roster.get_current()):
             current_player = self._roster.get_current()
             name = current_player.get_name()
-            self._console.write(f"\ncongratulations {name} You have won the game!")
+            self._console.write(f"\nCongratulations {name.upper()}!  You have won the game!")
             self._keep_playing = False
 
         self._roster.next_player()
