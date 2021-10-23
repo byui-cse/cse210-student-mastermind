@@ -6,7 +6,7 @@ class Hinter:
         # Starts by assuming everything is wrong
         hint = "****"
 
-        # Trasform code, guess and output into lists
+        # Trasform code, guess and hint into lists
         code_list = list(code.strip(" "))
         guess_list = list(guess.strip(" "))
         hint_list = list(hint.strip(" "))
@@ -26,7 +26,7 @@ class Hinter:
         # print(f"guess: {guess_list}")
         # print(f"hint:  {hint_list}")
 
-        # Converts the output back into a string and returns it
+        # Converts the hint back into a string and returns it
         hint = "".join(hint_list)
         return hint
 
