@@ -39,8 +39,6 @@ class Director:
         self._prepare_game()
         while self._keep_playing:
             self._get_inputs()
-
-
             self._do_updates()
             self._do_outputs()
 
@@ -62,10 +60,10 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        # display the game board
 
         # get next player's guess
         player = self._roster.get_current()
+        # display the game board
         board = player._board.to_string(self._roster)
         self._console.write(board)
         self._console.write(f"{player.get_name()}'s turn:")

@@ -25,7 +25,7 @@ class Board:
         attempt = guess
 
         for i in str(attempt):
-            self._guesses.append(int(i))
+            self._guesses.append(i)
 
         self.compare_guess()
 
@@ -38,7 +38,7 @@ class Board:
         
         for i, args in enumerate(self._guesses):
 
-            self._dashes[i] = args
+            self._dashes[i] = str(args)
 
             if self._number[i] == self._guesses[i]:
                 self._asterisks[i] = 'X'
@@ -50,6 +50,8 @@ class Board:
             else:
                 self._asterisks[i] = '*'
 
+        print(self._number)
+
         self._guesses = []
 
     def to_string(self, roster):
@@ -57,8 +59,8 @@ class Board:
         opponent_board = roster.players[1]._board
         table = '\n----------------------------'
 
-        table += f'\nPlayer {roster.players[0].get_name()}: {" ".join(str(self_board._dashes))}, {" ".join(str(self_board._asterisks))}'
-        table += f'\nPlayer {roster.players[1].get_name()}: {" ".join(str(opponent_board._dashes))}, {" ".join(str(opponent_board._asterisks))}'
+        table += f'\nPlayer {roster.players[0].get_name()}: {" ".join(self_board._dashes)}, {" ".join(self_board._asterisks)}'
+        table += f'\nPlayer {roster.players[1].get_name()}: {" ".join(opponent_board._dashes)}, {" ".join(opponent_board._asterisks)}'
         table += '\n----------------------------'
 
         return table
@@ -73,7 +75,7 @@ class Board:
         number = str(random.randint(1000, 9999))
 
         for i in number:
-            self._number.append(int(i))
+            self._number.append(i)
 
 
     def is_win(self):
@@ -84,7 +86,7 @@ class Board:
             self (Board): an instance of Board            
         '''
 
-        if self._guesses == self._number:
+        if self._dashes == self._number:
             return True
         else:
             return False
