@@ -21,7 +21,3 @@ class Checker:
 
         else:
             self.keep_playing = True
-
-    # # Simply to keep the loop running
-    # def keep_playing(self) -> bool:
-    #     return self.__keep_playing
