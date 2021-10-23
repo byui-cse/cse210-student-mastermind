@@ -35,3 +35,7 @@ root                    (project root folder)
 ## Authors
 ---
 * # TODO: Add your names and emails here
+
+Jeremy Diamond socjermeyd@gmail.com
+Pierre Phil Bangay pierrephild@gmail.com
+Alirio Mieres mie21001@byui.edu
