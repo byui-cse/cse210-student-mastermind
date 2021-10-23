@@ -37,6 +37,7 @@ class Board:
         Returns:
             string: A hint in the form [xxxx]
         """ 
+            
         hint = ""
         for index, letter in enumerate(guess):
             if code[index] == letter:
@@ -86,8 +87,11 @@ class Board:
         Returns: true if there are no "x" in the hint
         """
         hint = self._items[player.get_name()][2]
+        
+        if hint != "":
+            for character in hint:
+                if character != "x":
+                    return False
+            return True
 
-        for character in hint:
-            if character != "x":
-                return False
-        return True
+        return False

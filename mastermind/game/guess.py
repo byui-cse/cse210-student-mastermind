@@ -18,7 +18,7 @@ class Guess:
         self._guess = guess
 
     def get_guess(self):
-        """Returns the pile to remove from.
+        """Returns the number that the player guesses.
 
         Args:
             self (Guess): an instance of Guess.

@@ -28,6 +28,11 @@ class Director:
         self._console = Console()
         self._keep_playing = True
         self._roster = Roster()
+        self.hint_key = ("-------------------------------------------\n"
+                         "x = correct number in the correct place\n"
+                         "o = correct number but incorrect position\n"
+                         "* = incorrect number\n"
+                         "-------------------------------------------")
         
         
     def start_game(self):
@@ -48,6 +53,15 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+        game_intro =  ("-------------------------------------------------------------\n"
+                    "See how many guesses it will take you to guess the secret code?!\n"
+                    "We will give each player a differant secret code so you can't cheat.\n"
+                    "However, to make it easier we will give you the following hints as you play.")
+        
+        
+
+        self._console.write(game_intro)
+        self._console.write(self.hint_key)
 
         for n in range(2):
             name = self._console.read(f"Enter a name for player {n + 1}: ")
@@ -82,6 +96,7 @@ class Director:
         """
         player = self._roster.get_current()
         guess = player.get_guess()
+        #self._console.write(self.hint_key)
         self._board.current_guess(player, guess)
 
     def _do_outputs(self):
@@ -94,7 +109,7 @@ class Director:
         if self._board.check_hint(self._roster.get_current()):
             current_player = self._roster.get_current()
             name = current_player.get_name()
-            self._console.write(f"\n{name} won!")
+            self._console.write(f"\ncongratulations {name} You have won the game!")
             self._keep_playing = False
 
         self._roster.next_player()
